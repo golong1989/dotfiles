@@ -55,22 +55,17 @@ source ~/.fzf-tab/fzf-tab.plugin.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-# 禁止 Conda 自动修改 PS1
-export CONDA_CHANGEPS1=false
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
+# conda配置 
+## >>> conda lazy load >>>
+## 只在使用 conda 命令时才加载
+conda() {
+    # 先加载 conda hook
     if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+        source "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+    ## 调用真正的 conda 命令
+    command conda "$@"
+    ## 禁止 Conda 自动修改 PS1
+    export CONDA_CHANGEPS1=false
+}
+## <<< conda lazy load <<<
