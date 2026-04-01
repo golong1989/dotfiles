@@ -22,27 +22,6 @@ palette = 'catppuccin_mocha'
 disabled = false
 style = "bg:red fg:crust"
 
-[os.symbols]
-Windows = ""
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = "󰀵"
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-AOSC = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
@@ -58,67 +37,66 @@ truncate_to_repo = false
 
 
 [git_branch]
-symbol = ""
+symbol = "git:"
 style = "bg:yellow"
-format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
+format = '[[ $symbol$branch ](fg:crust bg:yellow)]($style)'
 
 [git_status]
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = "node:"
 style = "bg:green"
-format = '[[ $symbol $version ](fg:crust bg:green)]($style)'
+format = '[[ $symbol$version ](fg:crust bg:green)]($style)'
 
 [c]
-symbol = " "
+symbol = "c:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [rust]
-symbol = ""
+symbol = "rust:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [golang]
-symbol = ""
+symbol = "go:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [php]
-symbol = ""
+symbol = "php:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [java]
-symbol = " "
+symbol = "java:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [kotlin]
-symbol = ""
+symbol = "kotlin:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [haskell]
-symbol = ""
+symbol = "haskell:"
 style = "bg:green"
-format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version) ](fg:crust bg:green)]($style)'
 
 [python]
-disabled = true
-symbol = ""
+symbol = "python:"
 style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol($version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
 
 [docker_context]
-symbol = ""
+symbol = "docker:"
 style = "bg:sapphire"
-format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+format = '[[ $symbol($context) ](fg:crust bg:sapphire)]($style)'
 
 [conda]
-symbol = "Conda: "
+symbol = "conda:"
 style = "sapphire"
 format = '[$symbol$environment]($style)'
 ignore_base = true
