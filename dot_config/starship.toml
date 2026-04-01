@@ -107,6 +107,7 @@ style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
 [python]
+disabled = true
 symbol = ""
 style = "bg:green"
 format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
@@ -117,10 +118,10 @@ style = "bg:sapphire"
 format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 
 [conda]
-symbol = " "
+symbol = "Conda: "
 style = "sapphire"
 format = '[$symbol$environment]($style)'
-ignore_base = false
+ignore_base = true
 
 [time]
 disabled = true
