@@ -1,0 +1,18 @@
+set number
+set relativenumber
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set clipboard=unnamed
+syntax on
+
+" 搜索优化
+set ignorecase
+set smartcase
+set incsearch
+
+" 快捷键
+let mapleader=" "
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
