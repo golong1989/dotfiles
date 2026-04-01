@@ -1,0 +1,55 @@
+# ~/.zshrc 开头
+# ----------------------
+# PATH 先配置
+export PATH="/opt/homebrew/bin:/Users/litao/.local/bin:$PATH"
+
+# conda 优先
+export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
+
+export LANG=zh_CN.UTF-8
+
+## alias brew="arch -arm64 brew"
+alias ls='ls -G'
+alias ll="ls -la"
+alias y="yazi"
+
+
+# zoxide 初始化（必须在 PATH 正确之后）
+eval "$(zoxide init zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+## starship
+eval "$(starship init zsh)"
+
+# Go / Flutter / LM Studio / pyenv
+export GOROOT="$HOME/.g/go"
+export GOPATH="$HOME/go"
+export PATH="$HOME/bin:$GOROOT/bin:$GOPATH/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/.cache/lm-studio/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
+
+# ----------------------
+# pyenv 初始化
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+
+# ----------------------
+# fzf 初始化
+[ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+[ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
+
+# 启用补全
+autoload -Uz compinit
+compinit
+
+# 启用提示
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# 启用fzf
+source ~/.fzf-tab/fzf-tab.plugin.zsh
+
+# 可选：高亮
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
